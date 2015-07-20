@@ -1,0 +1,30 @@
+<form id="idUserForm">
+<section id="sectionAjoutUtilisateur" title="Création d'un utilistateur" >
+	<table class="table table-striped table-bordered table-condensed">
+		<tr >
+			<td style="font-weight: bold" align="left">Nom : </td> <td> <input type="text" data-ng-model="personne.nom" ng-required="true"/></td>
+		</tr>
+		<tr>
+			<td style="font-weight: bold" align="left">Prenom : </td> <td> <input type="text" data-ng-model="personne.prenom" ng-required="true" /></td>
+		</tr>
+		<tr>
+			<td style="font-weight: bold" align="left">Email : </td> <td> <input type="text" data-ng-model="personne.email" ng-required="true" ng-readonly="isModified" ng-disabled="isModified"/></td>
+		</tr>						
+		<tr>
+			<td style="font-weight: bold"align="left">Rôle : </td> <td> <!-- <input type="text" ng-model="prenom" required="required"> --></td>
+		</tr>
+	</table>
+	
+	<table>
+		<tr class="col-xs-10 col-xs-offset-2 ">
+			<td>
+				<button id="ajouterUtilisateur" class="btn-info" ng-click="ajouter()">
+					<label ng-show="!isModified">Créer</label>
+					<label ng-show="isModified">Modifier</label>
+				</button>
+			</td>
+			<td><button id="ajouterUtilisateur" class="btn-info" ng-click="retour()">Retour</button></td>
+		</tr>
+	</table>
+</section>
+</form>

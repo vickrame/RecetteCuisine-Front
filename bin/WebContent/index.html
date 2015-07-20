@@ -1,0 +1,86 @@
+<html data-ng-app="recetteCuisine">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Liste recette de cuisine</title>
+
+
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="vendor/angularv1.3/angular-dialog-service/dist/dialogs.min.css" rel="stylesheet" type="text/css" />
+
+
+<!-- bootstrap -->
+<link href="vendor/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+<link href="vendor/bootstrap/dist/css/bootstrap-theme.css.map" rel="stylesheet" type="text/css" />
+<link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="vendor/bootstrap/dist/css/bootstrap.css.map" rel="stylesheet" type="text/css" />
+<link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+<script src="vendor/angularv1.3/angular/angular.min.js"></script>
+<script src="vendor/angularv1.3/angular-route/angular-route.js"></script>
+<script src="vendor/angularv1.3/angular-resource/angular-resource.js"></script>
+<script src="vendor/angularv1.3/angular-animate/angular-animate.min.js"></script>
+<script src="vendor/angularv1.3/angular-dialog-service/dist/dialogs.min.js"/>
+<script src="vendor/angularv1.3/angular-dialog-service/dist/dialogs-default-translations.min.js"/>
+
+<script src="vendor/underscore/underscore.js"></script>
+<script src="vendor/lodash/lodash.min.js"></script>
+
+<script type="text/javascript" src="vendor/bootstrap-bower/ui-bootstrap.js"></script>
+
+<script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
+
+<!-- services -->
+<!-- <script src="js/app/services/admin/personneServices.js"></script>
+<script src="js/app/services/admin/referentielServices.js"/> -->
+<script type="text/javascript" src="js/app/services/admin/adminService.js"></script>
+<script type="text/javascript" src="js/app/services/ressources/recetteServices.js"></script>
+<!-- <script src="js/app/services/globalService.js"/> -->
+
+<!-- global -->
+<script src="js/app/routes.js"></script>
+<script src="js/app/cuisine.js"></script>
+<script src="js/app/filters.js"></script>
+
+<!-- navigation d'onglet ne onglet -->
+<script src="js/app/controlleurs/nav/navigationControlleurs.js"></script>
+
+<!-- partie admin -->
+<script type="text/javascript" src="js/app/controlleurs/admin/personneControlleurs.js"></script>
+<script type="text/javascript" src="js/app/controlleurs/admin/referentielControlleurs.js"></script>
+
+<!-- partie fonctionnelle -->
+<script type="text/javascript" src="js/app/controlleurs/acceuilControlleurs.js"></script>
+<script src="js/app/controlleurs/rechercheControlleurs.js"></script>
+<script src="js/app/controlleurs/recommendationsControlleurs.js"></script>
+<script type="text/javascript" src="js/app/controlleurs/restaurantControlleurs.js"></script>
+
+<title>Site de recette</title>
+</head>
+
+<body>
+	<div id="contenair" align="center">
+		<div id="header" height="100"/>
+			<div id="onglets">
+				<div id="ongletNiveau1" ng-controller="navigationControlleur" class="navbar-header">
+					<nav id="IdBarreNavigationOngletNiveau1">
+						<a href="#/accueil" class="btn btn-primary" ng-click="choixTemplate(1)">Page d'accueil</a> 
+						<a href="#/recettes" class="btn btn-primary" ng-click="choixTemplate(2)">Recettes</a> 
+						<a href="#/restaurant" class="btn btn-primary" ng-click="choixTemplate(3)">Restaurant</a>
+						<a href="#/admin" class="btn btn-primary" ng-click="choixTemplate(4)">Administrations</a>
+					</nav>
+					<div id="ongletNiveau2" ng-include="templateUrlPage" />
+				</div>
+			</div>
+		<div height="400" width="200" ng-view></div>
+
+		<div id="footer" height="70"/>
+	</div>
+
+
+</body>
+
+
+</html>
